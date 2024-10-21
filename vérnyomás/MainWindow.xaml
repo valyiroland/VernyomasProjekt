@@ -1,0 +1,35 @@
+﻿<Window x:Class="vérnyomás.MainWindow"
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Vérnyomás Rögzítő" Height="550" Width="400" FontSize="12" Background="AliceBlue">
+    <StackPanel Margin="10">
+        <Label Content="Felhasználó neve:"/>
+        <TextBox Name="UserTextBox" Margin="0,0,0,10"/>
+
+        <Label Content="Dátum:"/>
+        <TextBox Name="DateTextBox" IsReadOnly="True" Margin="0,0,0,10"/>
+
+        <Label Content="Szisztolés:"/>
+        <TextBox Name="SystolicTextBox" Margin="0,0,0,10"/>
+
+        <Label Content="Diasztolés:"/>
+        <TextBox Name="DiastolicTextBox" Margin="0,0,0,10"/>
+
+        <Label Content="Pulzus:"/>
+        <TextBox Name="PulseTextBox" Margin="0,0,0,10"/>
+
+        <Button Name="SaveDataButton" Content="Mentés" Click="SaveDataButton_Click" Margin="0,10"/>
+
+        <TextBlock Name="ResultTextBlock" Margin="0,10,0,0"/>
+
+        <DataGrid Name="DataGrid" Height="150"  AutoGenerateColumns="False" SelectionChanged="DataGrid_SelectionChanged">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Dátum" Binding="{Binding Date}"/>
+                <DataGridTextColumn Header="Szisztolés" Binding="{Binding Systolic}"/>
+                <DataGridTextColumn Header="Diasztolés" Binding="{Binding Diastolic}"/>
+                <DataGridTextColumn Header="Pulzus" Binding="{Binding Pulse}"/>
+                <DataGridTextColumn Header="Típus" Binding="{Binding Type}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </StackPanel>
+</Window>
